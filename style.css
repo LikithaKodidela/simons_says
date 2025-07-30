@@ -3,51 +3,36 @@ body {
   text-align: center;
   background: linear-gradient(to bottom right, #e3f2fd, #fce4ec);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin:0;
-  padding:0;
 }
 
 h1 {
   font-size: 3rem;
   color: #2c3e50;
-/*   text-shadow: 2px 2px #ecf0f1; */
-  margin-top: 1rem;
+  text-shadow: 2px 2px #ecf0f1;
+  margin-top: 2rem;
 }
 
 h2 {
-  font-size: 4.5vw;
+  font-size: 1.5rem;
   color: #34495e;
-  margin-bottom: 0.5rem;
-/*   transition: all 0.3s ease-in-out; */
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 h3 {
-  font-size: 3.5vw;
+  font-size: 1.2rem;
   color: #6c3483;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-weight: bold;
 }
-#start-btn {
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #2980b9;
-  color: white;
-  cursor: pointer;
-}
-#start-btn:hover {
-  background-color: #3498db;
-}
+
 .btn {
-  height: 35vw;
-  width: 35vw;
-  max-width: 150px;
-  max-height: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 20%;
   border: 10px solid black;
-  font-size: 1.5rem;
+  margin: 2rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #2c3e50;
   display: flex;
@@ -65,17 +50,24 @@ h3 {
 .btn-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
   gap: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* Button Colors */
-.red { background-color: rgb(220, 113, 103); }
-.yellow { background-color: rgb(222, 222, 108); }
-.green { background-color: rgb(116, 195, 116); }
-.blue { background-color: rgb(116, 116, 237); }
+.red {
+  background-color: rgb(220, 113, 103);
+}
+.yellow {
+  background-color: rgb(222, 222, 108);
+}
+.green {
+  background-color: rgb(116, 195, 116);
+}
+.blue {
+  background-color: rgb(116, 116, 237);
+}
 
 .flash {
   background-color: white !important;
