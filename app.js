@@ -8,7 +8,7 @@ let level=0;
 let h2 = document.querySelector("h2");
 let highScoreDisplay = document.getElementById("high-score-display");
 
-// ✅ Load high score from localStorage
+//  Load high score from localStorage
 let highScore = localStorage.getItem("highScore") || 0;
 highScore = parseInt(highScore);
 highScoreDisplay.innerText = `Highest Score: ${highScore}`;
@@ -60,7 +60,7 @@ function checkAns(idx){
     }else{
        let message = `Game Over! Your score was <b>${level}</b><br>Press any key to restart.`;
 
-    // ✅ Check and update high score
+    // Check and update high score
     if (level > highScore) {
       highScore = level;
       localStorage.setItem("highScore", highScore);
