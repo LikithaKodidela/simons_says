@@ -7,19 +7,19 @@ let level=0;
 
 let h2 = document.querySelector("h2");
 let highScoreDisplay = document.getElementById("high-score-display");
-let startBtn = document.getElementById("start-btn");
+
 //  Load high score from localStorage
 let highScore = localStorage.getItem("highScore") || 0;
 highScore = parseInt(highScore);
 highScoreDisplay.innerText = `Highest Score: ${highScore}`;
 
-//start game on button click
-startBtn.addEventListener("click", function () {
-  if (!started) {
-    started = true;
-    levelUp();
-    startBtn.style.display = "none";
-  }
+document.addEventListener("keypress",function(){
+    
+    if(started==false){
+        console.log("game is started");
+        started=true;
+        levelUp();
+    }
 });
 
 function gameFlash(btn){
@@ -49,7 +49,7 @@ function levelUp(){
     gameFlash(randbtn);
 }
 function checkAns(idx){
-    //console.log("curr level : ",level);
+    console.log("curr level : ",level);
 
     if(userSeq[idx]=== gameSeq[idx])
     {
@@ -58,14 +58,14 @@ function checkAns(idx){
        }
        
     }else{
-       let message = `Game Over! Your score was <b>${level}</b><br>Click "Start Game " to try again.`;
+       let message = `Game Over! Your score was <b>${level}</b><br>Press any key to restart.`;
 
     // Check and update high score
     if (level > highScore) {
       highScore = level;
       localStorage.setItem("highScore", highScore);
       highScoreDisplay.innerText = `Highest Score: ${highScore}`;
-      message += `<br><b>🎉 New High Score!</b>`;
+      message += `<br><b>🎉 Congratulations! You beat the highest score!</b>`;
     }
 
     h2.innerHTML = message;
@@ -79,7 +79,6 @@ function checkAns(idx){
    }
 }
 function btnPress(){
-    if (!started) return;
     let btn=this;
     userFlash(btn);
 
@@ -89,7 +88,7 @@ function btnPress(){
 }
 
 let allbtns = document.querySelectorAll(".btn");
-for (let btn of allbtns){
+for (btn of allbtns){
     btn.addEventListener("click",btnPress);
 }
 
@@ -98,5 +97,4 @@ function reset(){
     gameSeq=[];
     userSeq=[];
     level=0;
-    startBtn.style.display = "inline-block";
 }
